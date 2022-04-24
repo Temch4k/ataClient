@@ -94,7 +94,7 @@ public class HelloController implements Initializable {
         hBox.setAlignment(Pos.CENTER_LEFT);
         hBox.setPadding(new Insets(5,5,5,10));
 
-        Text text = new Text(msgFromServer);
+        Text text = new Text("Response From aTA: \n" + msgFromServer);
         TextFlow textFlow = new TextFlow(text);
 
         textFlow.setStyle("-fx-background-color: rgb(233,233,235);" +

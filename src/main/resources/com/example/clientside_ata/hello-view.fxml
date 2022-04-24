@@ -26,9 +26,9 @@
 
         </ScrollPane>
 
-        <Label layoutX="114" layoutY="26" text="aTA">
+        <Label layoutX="114" layoutY="26" text="Connected to aTa">
             <font>
-                <Font name="Ariel Rounded MT Bold" size="23"></Font>
+                <Font name="Arial Black" size="23"></Font>
             </font>
         </Label>
 

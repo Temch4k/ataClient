@@ -44,7 +44,7 @@ public class HelloController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         try{
-            client = new Client(new Socket("localhost",1234));
+            client = new Client(new Socket("10.0.0.105",1234));
             System.out.println("connected");
         }
         catch (IOException e)

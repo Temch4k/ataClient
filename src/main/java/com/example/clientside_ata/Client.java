@@ -47,6 +47,12 @@ public class Client {
                 while(socket.isConnected()){
                     try{
                         String messageFromClient = bufferedReader.readLine();
+
+                        if(messageFromClient.equals("Thank you for using aTA") ){
+                            closeEverything(socket,bufferedReader,bufferedWriter);
+                            System.exit(0);
+                        }
+
                         HelloController.addLabel(messageFromClient, vBox);
                     }
                     catch (IOException e){

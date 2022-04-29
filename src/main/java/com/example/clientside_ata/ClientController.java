@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -27,7 +26,7 @@ import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
+public class ClientController implements Initializable {
     @FXML
     private Button button_send;
 
@@ -49,8 +48,8 @@ public class HelloController implements Initializable {
         try{
             client = new Client(new Socket("localhost",1234));
             System.out.println("connected");
-            HelloController.addLabel("You're Connected To aTA!", vbox_messages);
-            HelloController.addLabel("Feel free to ask me anything related to Data Science :)", vbox_messages);
+            ClientController.addLabel("You're Connected To aTA!", vbox_messages);
+            ClientController.addLabel("Feel free to ask me anything related to Data Science :)", vbox_messages);
         }
         catch (IOException e)
         {
@@ -149,7 +148,7 @@ public class HelloController implements Initializable {
             }
         });
 
-        AudioClip note = new AudioClip(HelloController.class.getResource("/audio/sound-1.mp3").toString());
+        AudioClip note = new AudioClip(ClientController.class.getResource("/audio/sound-1.mp3").toString());
         note.play();
 
     }

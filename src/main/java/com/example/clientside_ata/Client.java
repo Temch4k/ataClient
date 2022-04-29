@@ -54,7 +54,7 @@ public class Client {
                         }
 
 
-                        HelloController.addLabel(messageFromClient, vBox);
+                        ClientController.addLabel(messageFromClient, vBox);
                     }
                     catch (IOException e){
                         e.printStackTrace();

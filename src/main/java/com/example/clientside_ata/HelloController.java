@@ -17,6 +17,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -48,6 +49,8 @@ public class HelloController implements Initializable {
         try{
             client = new Client(new Socket("localhost",1234));
             System.out.println("connected");
+            HelloController.addLabel("You're Connected To aTA!", vbox_messages);
+            HelloController.addLabel("Feel free to ask me anything related to Data Science :)", vbox_messages);
         }
         catch (IOException e)
         {
@@ -125,11 +128,12 @@ public class HelloController implements Initializable {
 
     public static void addLabel(String msgFromServer, VBox vbox)
     {
+
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_LEFT);
         hBox.setPadding(new Insets(5,5,5,10));
 
-        Text text = new Text("Response From aTA: \n" + msgFromServer);
+        Text text = new Text( msgFromServer);
         TextFlow textFlow = new TextFlow(text);
 
         textFlow.setStyle("-fx-background-color: rgb(233,233,235);" +
@@ -144,6 +148,9 @@ public class HelloController implements Initializable {
                 vbox.getChildren().add(hBox);
             }
         });
+
+        AudioClip note = new AudioClip(HelloController.class.getResource("/audio/sound-1.mp3").toString());
+        note.play();
 
     }
 }

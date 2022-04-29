@@ -53,6 +53,7 @@ public class Client {
                             System.exit(0);
                         }
 
+
                         HelloController.addLabel(messageFromClient, vBox);
                     }
                     catch (IOException e){

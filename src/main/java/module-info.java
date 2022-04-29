@@ -1,6 +1,7 @@
 module com.example.clientside_ata {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
 
     requires org.kordamp.bootstrapfx.core;
 
